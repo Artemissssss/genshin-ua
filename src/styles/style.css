@@ -1,0 +1,10 @@
+.mainSect{
+    width: 100%;
+}
+
+.mainBackImg{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
