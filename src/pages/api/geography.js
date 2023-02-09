@@ -6,6 +6,7 @@ export default function handler (req,res){
         width: "247",
         height: "139",
         route: "/geography/mondstadt",
-        content: "<h1 classname='articles-title'>Мондштадт<h1/>"
+        content: "<h1 classname='articles-title'>Мондштадт<h1/>",
+        comments:[],
     },])
 }

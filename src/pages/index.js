@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+
 export default function Home() {
   const [banner, setBanner] = useState([])
   const [events, setEvents] = useState([])
@@ -41,7 +42,9 @@ export default function Home() {
       <main className="mainSect">
         <Image className='mainBackImg' src={'/img/background-main.png'} alt="background" width="1281" height="721"/>
           <section className='mainInfo'>
-            <div className='mainBanner'>{
+            <div className='mainBanner'>
+              <h2 className='mainBannerH'>Актуальні ігрові баннери</h2>
+              {
             loading ? "<p>loading<p/>" : banner.map((arr,i) =>{
               return(
                 <div className='mainBannerSect' key={i}>
@@ -50,8 +53,9 @@ export default function Home() {
                 </div>
               )
             })}</div>
-            <div className='mainEvents'>{
-            loading ? "<p>loading<p/>" : events.map((arr,i) =>{
+            <div className='mainEvents'>
+              <h2 className='mainEventsText'>Веб-івенти</h2>
+              {loading ? "<p>loading<p/>" : events.map((arr,i) =>{
               return(
                 <Link href={arr.url} className='mainEventSect' key={i}>
                     <Image className='mainEventImg' src={arr.img} alt={arr.name} width={arr.width} height={arr.height}/>

@@ -6,6 +6,7 @@ export default function handler (req,res){
         width: "247",
         height: "139",
         route: "/bilds/xiao",
-        content: "<h1 classname='articles-title'>Сяо<h1/>"
+        content: "<h1 classname='articles-title'>Сяо<h1/>",
+        comments:[],
     },])
 }
