@@ -1,0 +1,113 @@
+[{
+    "name": "Білд на Сяо",
+    "imgPost": "/img/xiao-bild.png",
+    "width": "247",
+    "height": "139",
+    "route": "/xiao",
+    "link":"/bilds/xiao",
+    "content": "<h1 classname='articles-title'>Сяо<h1/>",
+    "comments":[]
+
+}]
+[{
+        "name": "Мондштадт",
+        "imgPost": "/img/mondstadt.png",
+        "width": "247",
+        "height": "139",
+        "route":"/mondstadt",
+        "link": "/geography/mondstadt",
+        "content": "<h1 classname='articles-title'>Мондштадт<h1/>",
+        "comments":[]
+    },]
+
+    [{
+        "name": "Сяо",
+        "imgPost": "/img/xiao-hero.png",
+        "width": "247",
+        "height": "139",
+        "route":"/xiao",
+        "link": "/heroes/xiao",
+        "content": "<h1 classname='articles-title'>Сяо<h1/>",
+        "comments":[]
+    }]
+
+[{
+    "name": "Нагороди за щоденний вхід",
+    "url": "https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481",
+    "img": "/img/everyday-event.png",
+    "width": "233",
+    "height": "104"
+}, {
+    "name": "Барвистість кольорів",
+    "url": "https://act.hoyoverse.com/ys/event/e20230129-lantern-vqhoj8/index.html",
+    "img": "/img/first-event.png",
+    "width": "233",
+    "height": "131"
+}]
+
+[{
+    "name": "Мондштадт",
+    "imgPost": "/img/mondstadt.png",
+    "width": "381",
+    "height": "214",
+    "route": "/geography/mondstadt"
+},{
+    "key": 1,
+    "name": "Сяо",
+    "imgPost": "/img/xiao-hero.png",
+    "width": "381",
+    "height": "214",
+    "route": "/heroes/xiao"
+}]
+
+[
+    {
+        "day":"Monday",
+        "mond":["mon-mond-book.png","mon-mond-weap.png"],
+        "li":["mon-li-book.png","mon-li-weap.png"],
+        "ina":["mon-ina-book.png","mon-ina-weap.png"],
+        "sum":["mon-sum-book.png","mon-sum-weap.png"]
+    },
+    {
+        "day":"Thuesday",
+        "mond":["tue-mond-book.png","tue-mond-weap.png"],
+        "li":["tue-li-book.png","tue-li-weap.png"],
+        "ina":["tue-ina-book.png","tue-ina-weap.png"],
+        "sum":["tue-sum-book.png","tue-sum-weap.png"]
+    },
+    {
+        "day":"Wednesday",
+        "mond":["wed-mon-book.png","wed-mon-weap.png"],
+        "li":["wed-li-book.png","wed-li-weap.png"],
+        "ina":["wed-ina-book.png","wed-ina-weap.png"],
+        "sum":["wed-sum-book.png","wed-sum-weap.png"]
+    },
+    {
+        "day":"Thuersday",
+        "mond":["mon-mond-book.png","mon-mond-weap.png"],
+        "li":["mon-li-book.png","mon-li-weap.png"],
+        "ina":["mon-ina-book.png","mon-ina-weap.png"],
+        "sum":["mon-sum-book.png","mon-sum-weap.png"]
+    },
+    {
+        "day":"Friday",
+        "mond":["tue-mond-book.png","tue-mond-weap.png"],
+        "li":["tue-li-book.png","tue-li-weap.png"],
+        "ina":["tue-ina-book.png","tue-ina-weap.png"],
+        "sum":["tue-sum-book.png","tue-sum-weap.png"]
+    },
+    {
+        "day":"Saturday",
+        "mond":["wed-mon-book.png","wed-mon-weap.png"],
+        "li":["wed-li-book.png","wed-li-weap.png"],
+        "ina":["wed-ina-book.png","wed-ina-weap.png"],
+        "sum":["wed-sum-book.png","wed-sum-weap.png"]
+    },
+    {
+        "day":"Sunday",
+        "mond":["mon-mond-book.png","mon-mond-weap.png","tue-mond-book.png","tue-mond-weap.png","wed-mon-book.png","wed-mon-weap.png"],
+        "li":["mon-li-book.png","mon-li-weap.png","tue-li-book.png","tue-li-weap.png","wed-li-book.png","wed-li-weap.png"],
+        "ina":["mon-ina-book.png","mon-ina-weap.png","tue-ina-book.png","tue-ina-weap.png","wed-ina-book.png","wed-ina-weap.png"],
+        "sum":["mon-sum-book.png","mon-sum-weap.png","tue-sum-book.png","tue-sum-weap.png","wed-sum-book.png","wed-sum-weap.png"]
+    },
+]

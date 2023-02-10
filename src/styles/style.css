@@ -20,6 +20,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 /* !============================================================================= */
 .mainBanner {
     width: 584px;
@@ -82,10 +83,59 @@
     align-items: center;
     color: #736A58;
 }
-.mainEventImg{
+
+.mainEventImg {
     margin-bottom: 15px;
 }
-.mainEventImg:nth-last-of-type(1){
+
+.mainEventImg:nth-last-of-type(1) {
     margin-bottom: 0;
 }
+
 /* !===============================================================================================================*/
+
+.mainNeedToRead {
+    width: 584px;
+    height: 305px;
+    background: #FFFFFF;
+    padding: 13px 5px;
+    margin-bottom: 53px;
+}
+
+.mainNeedToReadText {
+    width: 550px;
+    height: 43px;
+    font-family: 'Old Standard TT', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #736A58;
+}
+
+.mainNeedToReadSlider {
+    width: 381px;
+    height: 257px;
+    margin: 0 auto;
+}
+
+/* !=================================================================================================================== */
+
+.mainDayRecoursse {
+    width: 264px;
+    height: 305px;
+    background: #FFFFFF;
+    margin-bottom: 53px;
+    padding: 13px 16px 5px 16px;
+}
+
+.mainDayResText {
+    width: 100%;
+    height: 27px;
+    font-family: 'Old Standard TT';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #736A58;
+}

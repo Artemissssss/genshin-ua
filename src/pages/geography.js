@@ -19,6 +19,6 @@ export default function Profile() {
   }, [])
   if(loading) return <div>loading</div>
   return (
-    <PostList name="Географія Генашина" posts={data}/>
+    <PostList name="Географія Геншина" posts={data}/>
   )
 }
