@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from "react-slick";
-import DayResComponent from '@/components/Res/Res';
+import Res from '@/components/Res/Res';
 
 
 import { useEffect, useState } from 'react'
@@ -94,7 +94,7 @@ export default function Home() {
             </div>
 
             <div className='mainDayRecoursse'>
-              {resourse.length === 0 ? <p>loading</p> : <DayResComponent datares={resourse}/>}
+              {resourse.length === 0 ? <p>loading</p> : <Res datares={resourse}/>}
             </div>
           </section>
       </main>

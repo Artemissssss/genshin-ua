@@ -3,7 +3,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import Slider from "react-slick"
 
-function DayResComponent({datares}) {
+function Res({datares}) {
     const [days] = useState([{
         dayEng:"Monday",
         dayUkr:"Понеділок"
@@ -79,4 +79,4 @@ if (dayArr.length === 0) return <div>loading</div>;
     </>
   );
 };
-export default DayResComponent;
+export default Res;

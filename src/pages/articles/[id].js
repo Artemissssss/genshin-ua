@@ -2,27 +2,43 @@ import Post from "@/components/Post/Post"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-function id() {
+function Id({id}) {
     const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [route, useRoute] = useState("/articles/[id]")
     const router = useRouter()
+    
   useEffect(() => {
-    setLoading(true)
+    console.log(id)
     const fetchData = async () => {
-      const res = await fetch('/api/articles')
+      console.log(router.asPath)
+      const res = await fetch(`/api${router.asPath}`)
+      const dat = await res.json()
+      setData(dat)
+    }
+    route !== '/articles/[id]' ? fetchData() : useRoute(router.asPath);
+  }, [])
+  useEffect(()=>{
+    console.log(router)
+    const fetchData = async () => {
+      const res = await fetch(`/api${router.asPath}`)
       const data = await res.json()
       setData(data)
-      setLoading(false)
     }
     fetchData()
-  }, [])
-  if(loading) return <div>loading</div>
+  },[route])
+  if(data.length === 0) return <div style={{color:'white'}}>{router.asPath} ok {route}</div>
   return (
     <>
-    <p>{router.asPath}</p>
+    <p style={{color:'white'}} >{router.asPath}</p>
     {/* <p>{data[0]}</p> */}
     <Post component={data} />
     </>
   )
 }
-export default id
+
+export async function getServerSideProps(context) {
+  return {
+    props: {id:context.params.id}, // will be passed to the page component as props
+  }
+}
+export default Id
