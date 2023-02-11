@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from "react-slick";
-import DayResComponent from '@/components/DayResComponent/DayResComponent';
+import DayResComponent from '@/components/Res/Res';
 
 
 import { useEffect, useState } from 'react'
@@ -30,7 +30,7 @@ export default function Home() {
       const data2 = await res2.json()
       const res3 = await fetch('/api/needtoread')
       const data3 = await res3.json()
-      const res4 = await fetch('/api/dayRes')
+      const res4 = await fetch('/api/dayres')
       const data4 = await res4.json()
       setBanner(data)
       setEvents(data2)
