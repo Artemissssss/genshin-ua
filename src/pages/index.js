@@ -30,7 +30,7 @@ export default function Home() {
       const data2 = await res2.json()
       const res3 = await fetch('/api/needtoread')
       const data3 = await res3.json()
-      const res4 = await fetch('/api/dayres')
+      const res4 = await fetch('/api/dayRes')
       const data4 = await res4.json()
       setBanner(data)
       setEvents(data2)
