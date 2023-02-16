@@ -22,7 +22,7 @@ export default function handler(req, res) {
             "sum":["wed-sum-book.png","wed-sum-weap.png"]
         },
         {
-            "day":"Thuersday",
+            "day":"Thursday",
             "mond":["mon-mond-book.png","mon-mond-weap.png"],
             "li":["mon-li-book.png","mon-li-weap.png"],
             "ina":["mon-ina-book.png","mon-ina-weap.png"],

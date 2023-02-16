@@ -15,8 +15,8 @@ function PostList({ name, posts}) {
         {allPost.map((arr,i) => {
             return(
                 <div className="postListItem" key={i}>
-                    <Link className="postListHref" href={arr.route}>
-                        <Image className="postListImg" alt={arr.name} src={arr.imgPost} width={arr.width} height={arr.height}></Image>
+                    <Link className="postListHref" href={arr.link}>
+                        <Image priority="true" className="postListImg" alt={arr.name} src={arr.imgPost} width={arr.width} height={arr.height}></Image>
                         <h2 className="postListText">{arr.name}</h2>
                     </Link>
                 </div>

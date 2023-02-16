@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 31px;
     transform: translateX(-50%);

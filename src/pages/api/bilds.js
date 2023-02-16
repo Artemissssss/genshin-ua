@@ -5,7 +5,8 @@ export default function handler (req,res){
         imgPost: "/img/xiao-bild.png",
         width: "247",
         height: "139",
-        route: "/bilds/xiao",
+        route: "/xiao",
+        link: "/bilds/xiao",
         content: "<h1 classname='articles-title'>Сяо<h1/>",
         comments:[],
     },])

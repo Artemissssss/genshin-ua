@@ -2,36 +2,23 @@ import Post from "@/components/Post/Post"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-function Id({id}) {
+function Id() {
     const [data, setData] = useState([])
-    const [route, useRoute] = useState("/articles/[id]")
-    const router = useRouter()
+    const router = useRouter().asPath
     
   useEffect(() => {
-    console.log(id)
     const fetchData = async () => {
-      console.log(router.asPath)
-      const res = await fetch(`/api${router.asPath}`)
-      const dat = await res.json()
-      setData(dat)
-    }
-    route !== '/articles/[id]' ? fetchData() : useRoute(router.asPath);
-  }, [])
-  useEffect(()=>{
-    console.log(router)
-    const fetchData = async () => {
-      const res = await fetch(`/api${router.asPath}`)
+      const res = await fetch(`/api/articles`)
       const data = await res.json()
-      setData(data)
+      setData(data.filter((arr) =>{if(arr.link === router){return true;}}))
     }
     fetchData()
-  },[route])
-  if(data.length === 0) return <div style={{color:'white'}}>{router.asPath} ok {route}</div>
+  }, [])
+  if(data.length === 0) return <div style={{color:'white'}}>loading</div>
   return (
     <>
-    <p style={{color:'white'}} >{router.asPath}</p>
-    {/* <p>{data[0]}</p> */}
-    <Post component={data} />
+    {/* <p style={{color:'white'}} >{router.asPath}</p> */}
+    <Post component={data[0]} />
     </>
   )
 }

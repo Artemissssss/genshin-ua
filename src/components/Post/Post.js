@@ -3,16 +3,15 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 const parse = require('html-react-parser');
 
-function PostList({ post }) {
- const [content,getContent] = useState("")
+function PostList({ component }) {
+ const [components,getComponents] = useState("")
  useEffect(()=>{
-    console.log(post)
-    getContent(post)
+  getComponents(component)
  },[])
   return (
     <section className="postList">
         <div className="postListWrap"></div>
-        {parse(`${content}`)}
+        {parse(`${components.content}`)}
         <div className="postListWrap2"></div>
     </section>
   )

@@ -1,12 +1,13 @@
 .postList {
     width: 922px;
+    height: auto;
     background: #FFFFFF;
-    margin: 0 auto;
-    margin-top: 195px;
+    margin: 195px auto 53px auto;
     padding: 0 32px;
     padding-bottom: 90px;
 }
 .postListWrap{
+    height: 1px;
     width: 858px;
     position: absolute;
 }
@@ -24,6 +25,7 @@
 }
 
 .postListWrap2{
+    height: 1px;
     width: 858px;
     position: absolute;
 }
