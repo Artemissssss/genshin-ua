@@ -39,6 +39,7 @@ function Res({datares}) {
         pauseOnHover:false,
       };
 useEffect(() =>{
+    console.log(process.env)
     // console.dir(datares)
     setDayArr(datares.filter((arr) =>{if(arr.day === today){return true}}))
 },[])
