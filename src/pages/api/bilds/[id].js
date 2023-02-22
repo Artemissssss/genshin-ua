@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         );
         const filter = {route: "/"+req.query.id};
     
-        const coll = client.db('genshin-ua').collection('articles');
+        const coll = client.db('genshin-ua').collection('bilds');
         const cursor = coll.find(filter);
         const result = await cursor.toArray();
         
@@ -16,9 +16,9 @@ export default async function handler(req, res) {
         if(result && result[0]){
             res.status(200).json(result[0])
         } else {
-            res.status(404).json({message: "Not found"})
+            res.status(404).json({message: []})
         }
     } catch {
-        res.status(404).json({message: "Not found"})
+        res.status(404).json({message: []})
     }
 }

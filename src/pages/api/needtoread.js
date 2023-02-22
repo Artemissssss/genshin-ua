@@ -1,16 +1,12 @@
-export default function handler (req,res){
-    res.status(200).json([{
-        name: "Мондштадт",
-        imgPost: "/img/mondstadt.png",
-        width: "381",
-        height: "214",
-        route: "/geography/mondstadt",
-    },{
-        key: 1,
-        name: "Сяо",
-        imgPost: "/img/xiao-hero.png",
-        width: "381",
-        height: "214",
-        route: "/heroes/xiao",
-    },])
+const { MongoClient, ObjectId } = require('mongodb');
+export default async function handler(req, res) {
+    const client = await MongoClient.connect(
+        `mongodb+srv://${process.env.NEXT_PUBLIC_DATABASE_USER}:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@${process.env.NEXT_PUBLIC_DATABASE}/?retryWrites=true&w=majority`,
+        { useNewUrlParser: true, useUnifiedTopology: true }
+    );  
+    const coll = client.db('genshin-ua').collection('needtoread');
+    const cursor = coll.find();
+    const result = await cursor.toArray();
+    await client.close();
+    res.status(200).json(result)
 }

@@ -4,7 +4,7 @@ import {
   useEffect
 } from 'react'
 
-export default function Profile() {
+export default function Profile(z) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   useEffect(() => {

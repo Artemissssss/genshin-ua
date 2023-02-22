@@ -1,6 +1,7 @@
 .postList {
     width: 922px;
     height: auto;
+    min-height: 588px;
     background: #FFFFFF;
     margin: 195px auto 53px auto;
     padding: 0 32px;

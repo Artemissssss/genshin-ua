@@ -8,9 +8,9 @@ function Id() {
     
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`/api/articles`)
+      const res = await fetch(`/api${router}`)
       const data = await res.json()
-      setData(data.filter((arr) =>{if(arr.link === router){return true;}}))
+      setData(data)
     }
     fetchData()
   }, [])
@@ -18,11 +18,10 @@ function Id() {
   return (
     <>
     {/* <p style={{color:'white'}} >{router.asPath}</p> */}
-    <Post component={data[0]} />
+    <Post component={data} />
     </>
   )
 }
-
 export async function getServerSideProps(context) {
   return {
     props: {id:context.params.id}, // will be passed to the page component as props

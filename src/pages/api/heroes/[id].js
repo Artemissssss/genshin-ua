@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         );
         const filter = {route: "/"+req.query.id};
     
-        const coll = client.db('genshin-ua').collection('articles');
+        const coll = client.db('genshin-ua').collection('heroes');
         const cursor = coll.find(filter);
         const result = await cursor.toArray();
         

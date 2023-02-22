@@ -1,27 +1,13 @@
-export default function handler(req, res) {
-    res.status(200).json([{
-        "key": 1,
-        "name": "Знавчиня таємничого",
-        "img": "/img/first-banner.png",
-        "width": "263",
-        "height": "148",
-    }, {
-        "key": 2,
-        "name": "Мить розквіту",
-        "img": "/img/second-banner.png",
-        "width": "263",
-        "height": "148",
-    }, {
-        "key": 3,
-        "name": "Божественна лита форма",
-        "img": "/img/weapon-banner.png",
-        "width": "263",
-        "height": "148",
-    }, {
-        "key": 4,
-        "name": "Заклик до подорожей",
-        "img": "/img/standart-banner.png",
-        "width": "263",
-        "height": "148",
-    }])
+const { MongoClient, ObjectId } = require('mongodb');
+
+export default async function handler(req, res) {
+    const client = await MongoClient.connect(
+        `mongodb+srv://${process.env.NEXT_PUBLIC_DATABASE_USER}:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@${process.env.NEXT_PUBLIC_DATABASE}/?retryWrites=true&w=majority`,
+        { useNewUrlParser: true, useUnifiedTopology: true }
+    );  
+    const coll = client.db('genshin-ua').collection('bannner');
+    const cursor = coll.find();
+    const result = await cursor.toArray();
+    await client.close();
+    res.status(200).json(result)
 }

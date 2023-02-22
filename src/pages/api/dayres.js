@@ -1,53 +1,13 @@
-export default function handler(req, res) {
-    res.status(200).json([
-        {
-            "day":"Monday",
-            "mond":["mon-mond-book.png","mon-mond-weap.png"],
-            "li":["mon-li-book.png","mon-li-weap.png"],
-            "ina":["mon-ina-book.png","mon-ina-weap.png"],
-            "sum":["mon-sum-book.png","mon-sum-weap.png"]
-        },
-        {
-            "day":"Thuesday",
-            "mond":["tue-mond-book.png","tue-mond-weap.png"],
-            "li":["tue-li-book.png","tue-li-weap.png"],
-            "ina":["tue-ina-book.png","tue-ina-weap.png"],
-            "sum":["tue-sum-book.png","tue-sum-weap.png"]
-        },
-        {
-            "day":"Wednesday",
-            "mond":["wed-mon-book.png","wed-mon-weap.png"],
-            "li":["wed-li-book.png","wed-li-weap.png"],
-            "ina":["wed-ina-book.png","wed-ina-weap.png"],
-            "sum":["wed-sum-book.png","wed-sum-weap.png"]
-        },
-        {
-            "day":"Thursday",
-            "mond":["mon-mond-book.png","mon-mond-weap.png"],
-            "li":["mon-li-book.png","mon-li-weap.png"],
-            "ina":["mon-ina-book.png","mon-ina-weap.png"],
-            "sum":["mon-sum-book.png","mon-sum-weap.png"]
-        },
-        {
-            "day":"Friday",
-            "mond":["tue-mond-book.png","tue-mond-weap.png"],
-            "li":["tue-li-book.png","tue-li-weap.png"],
-            "ina":["tue-ina-book.png","tue-ina-weap.png"],
-            "sum":["tue-sum-book.png","tue-sum-weap.png"]
-        },
-        {
-            "day":"Saturday",
-            "mond":["wed-mon-book.png","wed-mon-weap.png"],
-            "li":["wed-li-book.png","wed-li-weap.png"],
-            "ina":["wed-ina-book.png","wed-ina-weap.png"],
-            "sum":["wed-sum-book.png","wed-sum-weap.png"]
-        },
-        {
-            "day":"Sunday",
-            "mond":["mon-mond-book.png","mon-mond-weap.png","tue-mond-book.png","tue-mond-weap.png","wed-mon-book.png","wed-mon-weap.png"],
-            "li":["mon-li-book.png","mon-li-weap.png","tue-li-book.png","tue-li-weap.png","wed-li-book.png","wed-li-weap.png"],
-            "ina":["mon-ina-book.png","mon-ina-weap.png","tue-ina-book.png","tue-ina-weap.png","wed-ina-book.png","wed-ina-weap.png"],
-            "sum":["mon-sum-book.png","mon-sum-weap.png","tue-sum-book.png","tue-sum-weap.png","wed-sum-book.png","wed-sum-weap.png"]
-        },
-    ])
+const { MongoClient, ObjectId } = require('mongodb');
+
+export default async function handler(req, res) {
+    const client = await MongoClient.connect(
+        `mongodb+srv://${process.env.NEXT_PUBLIC_DATABASE_USER}:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@${process.env.NEXT_PUBLIC_DATABASE}/?retryWrites=true&w=majority`,
+        { useNewUrlParser: true, useUnifiedTopology: true }
+    );  
+    const coll = client.db('genshin-ua').collection('dayRes');
+    const cursor = coll.find();
+    const result = await cursor.toArray();
+    await client.close();
+    res.status(200).json(result)
 }

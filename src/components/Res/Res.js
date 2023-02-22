@@ -39,7 +39,6 @@ function Res({datares}) {
         pauseOnHover:false,
       };
 useEffect(() =>{
-    console.log(process.env.NEXT_PUBLIC_DATABASE)
     // console.dir(datares)
     setDayArr(datares.filter((arr) =>{if(arr.day === today){return true}}))
 },[])

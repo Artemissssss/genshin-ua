@@ -1,15 +1,13 @@
-export default function handler(req, res) {
-    res.status(200).json([{
-        name: "Нагороди за щоденний вхід",
-        url: "https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481",
-        img: "/img/everyday-event.png",
-        width: "233",
-        height: "104",
-    }, {
-        name: "Барвистість кольорів",
-        url: "https://act.hoyoverse.com/ys/event/e20230129-lantern-vqhoj8/index.html",
-        img: "/img/first-event.png",
-        width: "233",
-        height: "131",
-    },])
+const { MongoClient, ObjectId } = require('mongodb');
+
+export default async function handler(req, res) {
+    const client = await MongoClient.connect(
+        `mongodb+srv://${process.env.NEXT_PUBLIC_DATABASE_USER}:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@${process.env.NEXT_PUBLIC_DATABASE}/?retryWrites=true&w=majority`,
+        { useNewUrlParser: true, useUnifiedTopology: true }
+    );  
+    const coll = client.db('genshin-ua').collection('events');
+    const cursor = coll.find();
+    const result = await cursor.toArray();
+    await client.close();
+    res.status(200).json(result)
 }
