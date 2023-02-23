@@ -10,7 +10,11 @@ export default async function handler(req, res) {
         if(req.method === "POST"){
             const result = await coll.insertOne(req.body)
             await client.close();
-            res.status(200)
+            const filter = {route: "/"+req.query.id};
+            const cursor = coll.find(filter);
+            const result2 = await cursor.toArray();
+            await client.close();
+            res.status(200).json(result2)
         }else{
             const filter = {route: "/"+req.query.id};
             const cursor = coll.find(filter);

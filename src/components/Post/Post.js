@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import CommentForm from "../CommentForm/CommentForm";
 import Comments from "../Comments/Comments";
 const parse = require('html-react-parser');
 
@@ -15,8 +14,7 @@ function PostList({ component }) {
     <section className="postList">
         <div className="postListWrap"></div>
         {parse(`${components.content}`)}
-        <CommentForm router={components.link} route={component.route}/>
-        <Comments router={components.link}/>
+        <Comments router={components.link} route={component.route}/>
         <div className="postListWrap2"></div>
     </section>
   )
