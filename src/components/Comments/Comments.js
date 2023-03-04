@@ -1,7 +1,9 @@
-import { useEffect, useState,useRef } from "react"
+import { useEffect, useState, useRef, useContext } from "react"
 import ReCAPTCHA from "react-google-recaptcha";
+import { StatusContext } from "@/context/context";
 
 function Comments({router,route}) {
+    const { status } = useContext(StatusContext);
     const [data, setData] = useState([])
     const captch = useRef()
     const comment = (e) => {
@@ -11,15 +13,23 @@ function Comments({router,route}) {
             method: 'POST',
             body: JSON.stringify({"name":e.target[0].value,"text":e.target[1].value,"route":route}),
             headers: {
-            'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             }
-            }).then(async (res)=>{const data = await res.json();setData(data.reverse())});
+          }).then(async (res)=>{const data = await res.json();setData(data.reverse())});
           e.target.reset()
         }else{
           alert("Пройдіть перевірку reCaptcha")
         }
+      }
+      const deleter = (e) =>{
+      fetch(`/api/comments${router}`, {
+        method: 'DELETE',
+        body: JSON.stringify(e.target.textContent),
+        headers: {
+        'Content-Type': 'application/json'
+        }
+        }).then(async (res)=>{const data = await res.json();setData(data.reverse())});
     }
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`/api/comments${router}`)
@@ -48,7 +58,7 @@ function Comments({router,route}) {
     {data.length !== 0 ? (
     <div className="CommentsSectList">
         {
-            data.map((arr,i)=>{return (<div className="postCommentsList" key={i}><h4 className="postCommentsName">{arr.name}</h4> <p className="postCommentsText">{arr.text}</p></div>)})
+            data.map((arr,i)=>{return (<div className="postCommentsList" key={i}><h4 className="postCommentsName">{arr.name}</h4> <p className="postCommentsText">{arr.text}</p> {status ? <button onClick={deleter}>{arr._id}</button> : null}</div>)})
         }
     </div>
     ): null}

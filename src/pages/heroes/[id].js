@@ -1,7 +1,6 @@
 import Post from "@/components/Post/Post"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-
 function Id() {
     const [data, setData] = useState([])
     const router = useRouter().asPath

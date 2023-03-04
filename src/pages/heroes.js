@@ -3,8 +3,7 @@ import {
   useState,
   useEffect
 } from 'react'
-
-export default function Profile(z) {
+export default function Profile() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   useEffect(() => {
@@ -19,6 +18,8 @@ export default function Profile(z) {
   }, [])
   if(loading) return <div>loading</div>
   return (
+    <>
     <PostList name="Персонажі Геншина" posts={data}/>
+    </>
   )
 }

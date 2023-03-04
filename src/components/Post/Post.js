@@ -13,8 +13,9 @@ function PostList({ component }) {
   return (
     <section className="postList">
         <div className="postListWrap"></div>
+
         {parse(`${components.content}`)}
-        <Comments router={components.link} route={component.route}/>
+          <Comments router={components.link} route={component.route}/>
         <div className="postListWrap2"></div>
     </section>
   )

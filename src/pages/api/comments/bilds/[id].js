@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient,ObjectId } = require('mongodb');
 
 export default async function handler(req, res) {
     try {
@@ -9,6 +9,13 @@ export default async function handler(req, res) {
         const coll = client.db('genshin-ua-comments').collection('bilds');
         if(req.method === "POST"){
             const result = await coll.insertOne(req.body)
+            const filter = {route: "/"+req.query.id};
+            const cursor = coll.find(filter);
+            const result2 = await cursor.toArray();
+            await client.close();
+            res.status(200).json(result2)
+        }else if(req.method === "DELETE"){
+            const result = await coll.deleteOne({_id: new ObjectId(req.body)});
             const filter = {route: "/"+req.query.id};
             const cursor = coll.find(filter);
             const result2 = await cursor.toArray();

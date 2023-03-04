@@ -3,7 +3,6 @@ import {
   useState,
   useEffect
 } from 'react'
-
 export default function Profile() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -19,6 +18,8 @@ export default function Profile() {
   }, [])
   if(loading) return <div>loading</div>
   return (
+    <>
     <PostList name="Білди на персонажів у Геншині" posts={data}/>
+    </>
   )
 }

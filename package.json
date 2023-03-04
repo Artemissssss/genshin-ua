@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@reduxjs/toolkit": "^1.9.3",
     "html-react-parser": "^3.0.8",
     "moment": "^2.29.4",
     "mongodb": "^5.0.1",

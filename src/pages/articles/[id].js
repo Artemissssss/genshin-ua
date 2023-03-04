@@ -1,7 +1,6 @@
 import Post from "@/components/Post/Post"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-
 function Id() {
     const [data, setData] = useState([])
     const router = useRouter().asPath
@@ -17,7 +16,6 @@ function Id() {
   if(data.length === 0) return <div style={{color:'white'}}>loading</div>
   return (
     <>
-    {/* <p style={{color:'white'}} >{router.asPath}</p> */}
     <Post component={data} />
     </>
   )
