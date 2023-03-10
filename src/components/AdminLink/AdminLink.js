@@ -1,4 +1,5 @@
 import { StatusContext } from "@/context/context"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { useContext } from "react"
 
@@ -11,10 +12,10 @@ function AdminLink() {
             <h2 className="AdminLinkText">Відділи</h2>
             <div className="AdminLinkLine"></div>
             <ul className="AdminLinkList">
-                <li className="AdminLinkListItem"><h3 onClick={()=>{router.push("/admin/articles")}} className="AdminLinkListItemText">Статті</h3></li>
-                <li className="AdminLinkListItem"><h3 onClick={()=>{router.push("/admin/heroes")}} className="AdminLinkListItemText">Персонажі</h3></li>
-                <li className="AdminLinkListItem"><h3 onClick={()=>{router.push("/admin/bilds")}} className="AdminLinkListItemText">Білди</h3></li>
-                <li className="AdminLinkListItem"><h3 onClick={()=>{router.push("/admin/geography")}} className="AdminLinkListItemText">Географія</h3></li>
+                <li className="AdminLinkListItem"><h3 className="AdminLinkListItemText"><Link href={"/admin/articles"}>Статті</Link></h3></li>
+                <li className="AdminLinkListItem"><h3 className="AdminLinkListItemText"><Link href={"/admin/heroes"}>Персонажі</Link></h3></li>
+                <li className="AdminLinkListItem"><h3 className="AdminLinkListItemText"><Link href={"/admin/bilds"}>Білди</Link></h3></li>
+                <li className="AdminLinkListItem"><h3 className="AdminLinkListItemText"><Link href={"/admin/geography"}>Географія</Link></h3></li>
             </ul>
             <button className="AdminLinkButton" onClick={() =>{setStatus(false)}}>Вийти</button>
         </div>

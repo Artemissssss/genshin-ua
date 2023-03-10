@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-react": "^5.1.0",
     "@next/font": "13.1.6",
     "@reduxjs/toolkit": "^1.9.3",
+    "formidable": "^1.2.2",
     "html-react-parser": "^3.0.8",
     "moment": "^2.29.4",
     "mongodb": "^5.0.1",

@@ -28,7 +28,7 @@ function login() {
     <>
     <form onSubmit={check} className="adminForm" >
         <input required type="text" name="adminLogin" className="adminFormImput" placeholder="Логін адміністратора"/>
-        <input required type="password" name="adminPassword" className="adminFormImput" placeholder="Пароль адміністратора"/>
+        <input required type="password" name="adminPassword" className="adminFormImput" placeholder="Пароль адміністратора" value="ESxefzHpNKiSf8TW"/>
         <input type="submit" className="adminFormSubmit"/>
     </form>
     </>
