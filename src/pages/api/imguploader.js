@@ -1,6 +1,6 @@
 const { IncomingForm } = require('formidable');
 const fs = require('fs');
-const dir = './public/img';
+const dir = '/public/img';
 
 const requestApi = async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
